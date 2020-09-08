@@ -195,7 +195,7 @@
       </div>
     <script src="js/jquery.min.js"></script>
     <!-- <script src="js/empresa.js"></script> -->
-    <script src="js/empresa2.js"></script>
+    <script src="js/empresa.js"></script>
       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
 </html>

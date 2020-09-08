@@ -218,13 +218,9 @@ $(document).ready(function(){
 			return false;
 		}else{
 			$.ajax({
-				url: 'orcamentoe.php',
+				url: 'orcamentor.php',
 				method: 'post',
-				data: {p1:p1, p2:p2, p3:p3, p4:p4, p5:p5, p6:p6, p7:p7, p8:p8, nome:nome, telefone:telefone, email:email, cep:cep, recaptcha:grecaptcha.getResponse()},
-				success: function(data){
-					$("#resultado").show();
-					$("#resultado").html(data);
-				}
+				data: {p1:p1, p2:p2, p3:p3, p4:p4, p5:p5, p6:p6, p7:p7, p8:p8, nome:nome, telefone:telefone, email:email, cep:cep, recaptcha:grecaptcha.getResponse()}
 			});
 		}
 		function emailValido($email){
