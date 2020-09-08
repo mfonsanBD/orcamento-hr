@@ -19,12 +19,12 @@
               <div class="text-center">
                 <a href="index.php"><img src="img/logo.png" alt="Marca Grupo HR" width="200" class="mb-2"></a>
                 <h4 class="text-center text-light p-2 mb-2 rounded text-uppercase">Orçamento para Empresa</h4>
-                <div class="progress mb-3" style="height: 40px;">
-                  <div class="progress-bar bg-hr" role="progressbar" style="width: 14.2%;" id="progressbar">
-                    <b class="lead" style="font-size: 14px !important; color: #FFFFFF; padding-left: 10px;" id="preogressText">Passo 01 de 07</b>
+                <div class="progress mb-5" style="height: 40px;">
+                  <div class="progress-bar bg-warning" role="progressbar" style="width: 14.2%;" id="progressbar">
+                    <b class="lead" style="font-size: 14px !important; color: #000000; padding-left: 10px;" id="preogressText">Passo 01 de 07</b>
                   </div>
                 </div>
-                <form action="" method="POST" id="form-data">
+                <form method="POST" id="form-data">
                   <div id="primeiro">
                     <h5 class="text-center  mb-4 p-2 rounded text-light">Como é a sua empresa?</h5>
                     <div class="form-check text-left">

@@ -16,7 +16,9 @@
           <div class="row justify-content-center">
             <div class="col-md-6 bg-white p-4 rounded branco">
               <div class="text-center">
-                <img src="img/logo.png" alt="Marca Grupo HR" width="200" class="mb-2">
+                <a href="https://grupohrbrasil.com.br" target="_blank">
+                  <img src="img/logo.png" alt="Marca Grupo HR" width="200" class="mb-2">
+                </a>
                 <h4 class="text-center text-light p-2 mb-3 rounded text-uppercase">O orçamento é para:</h4>
                 <ul class="list-group list-group-horizontal-lg">
                   <li class="list-group-item">

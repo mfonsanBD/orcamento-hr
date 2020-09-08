@@ -1,6 +1,7 @@
 $(document).ready(function(){
-	$("#proximo-1").click(function(e){
-
+	var p1, p2, p3, p4, p5, p6, p7, p8;
+	
+	$("input[name=passo1]").click(function(e){
 		e.preventDefault();
 		$('#passo1Erro').html('');
 
@@ -11,6 +12,7 @@ $(document).ready(function(){
 			$('#passo1Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p1 = $(this).val();
 			$("#segundo").show();
 			$("#primeiro").hide();
 			$("#progressbar").css("width", "22.22%");
@@ -18,15 +20,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#anterior-2").click(function(){
-		$("#primeiro").show();
-		$("#segundo").hide();
-		$("#progressbar").css("width", "11.11%");
-		$("#preogressText").html("Passo 01 de 09");
-	});
-
-	$("#proximo-2").click(function(e){
-
+	$("input[name=passo2]").click(function(e){
 		e.preventDefault();
 		$('#passo2Erro').html('');
 
@@ -37,6 +31,7 @@ $(document).ready(function(){
 			$('#passo2Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p2 = $(this).val();
 			$("#terceiro").show();
 			$("#segundo").hide();
 			$("#progressbar").css("width", "33.33%");
@@ -44,15 +39,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#anterior-3").click(function(){
-		$("#segundo").show();
-		$("#terceiro").hide();
-		$("#progressbar").css("width", "22.22%");
-		$("#preogressText").html("Passo 02 de 09");
-	});
-
-	$("#proximo-3").click(function(e){
-
+	$("input[name=passo3]").click(function(e){
 		e.preventDefault();
 		$('#passo3Erro').html('');
 
@@ -63,6 +50,7 @@ $(document).ready(function(){
 			$('#passo3Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p3 = $(this).val();
 			$("#quarto").show();
 			$("#terceiro").hide();
 			$("#progressbar").css("width", "44.44%");
@@ -70,15 +58,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#anterior-4").click(function(){
-		$("#terceiro").show();
-		$("#quarto").hide();
-		$("#progressbar").css("width", "33.33%");
-		$("#preogressText").html("Passo 03 de 09");
-	});
-
-	$("#proximo-4").click(function(e){
-
+	$("input[name=passo4]").click(function(e){
 		e.preventDefault();
 		$('#passo4Erro').html('');
 
@@ -90,6 +70,7 @@ $(document).ready(function(){
 			$('#passo4Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p4 = $(this).val();
 			$("#quinto").show();
 			$("#quarto").hide();
 			$("#progressbar").css("width", "55.55%");
@@ -97,15 +78,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#anterior-5").click(function(){
-		$("#quarto").show();
-		$("#quinto").hide();
-		$("#progressbar").css("width", "44.44%");
-		$("#preogressText").html("Passo 04 de 09");
-	});
-
-	$("#proximo-5").click(function(e){
-
+	$("input[name=passo5]").click(function(e){
 		e.preventDefault();
 		$('#passo5Erro').html('');
 
@@ -117,6 +90,7 @@ $(document).ready(function(){
 			$('#passo5Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p5 = $(this).val();
 			$("#sexto").show();
 			$("#quinto").hide();
 			$("#progressbar").css("width", "66.66%");
@@ -124,15 +98,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#anterior-6").click(function(){
-		$("#quinto").show();
-		$("#sexto").hide();
-		$("#progressbar").css("width", "55.55%");
-		$("#preogressText").html("Passo 05 de 09");
-	});
-
-	$("#proximo-6").click(function(e){
-
+	$("input[name=passo6]").click(function(e){
 		e.preventDefault();
 		$('#passo6Erro').html('');
 
@@ -143,6 +109,7 @@ $(document).ready(function(){
 			$('#passo6Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p6 = $(this).val();
 			$("#setimo").show();
 			$("#sexto").hide();
 			$("#progressbar").css("width", "77.77%");
@@ -150,15 +117,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#anterior-7").click(function(){
-		$("#sexto").show();
-		$("#setimo").hide();
-		$("#progressbar").css("width", "66.66%");
-		$("#preogressText").html("Passo 06 de 09");
-	});
-
-	$("#proximo-7").click(function(e){
-
+	$("input[name=passo7]").click(function(e){
 		e.preventDefault();
 		$('#passo7Erro').html('');
 
@@ -171,6 +130,7 @@ $(document).ready(function(){
 			$('#passo7Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p7 = $(this).val();
 			$("#oitavo").show();
 			$("#setimo").hide();
 			$("#progressbar").css("width", "88.88%");
@@ -178,15 +138,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#anterior-8").click(function(){
-		$("#setimo").show();
-		$("#oitavo").hide();
-		$("#progressbar").css("width", "77.77%");
-		$("#preogressText").html("Passo 07 de 09");
-	});
-
-	$("#proximo-8").click(function(e){
-
+	$("input[name=passo8]").click(function(e){
 		e.preventDefault();
 		$('#passo8Erro').html('');
 
@@ -197,6 +149,7 @@ $(document).ready(function(){
 			$('#passo8Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p8 = $(this).val();
 			$("#nono").show();
 			$("#oitavo").hide();
 			$("#progressbar").css("width", "100%");
@@ -211,65 +164,65 @@ $(document).ready(function(){
 		$("#emailErro").html('');
 		$("#cepErro").html('');
 
-		if($("#nome").val() == ''){
-			$("#nomeErro").html('*O campo Nome é obrigatório.');
-			return false;
-		}
-		else if(!isNaN($("#nome").val())){
-			$("#nomeErro").html('*O campo Nome não permite número.');
-			return false;
-		}
-		else if($("#nome").val().length < 3){
-			$("#nomeErro").html('*O campo Nome não pode ter menos que 3 caracteres.');
-			return false;
-		}
-		else if($("#email").val() == ''){
-			$("#emailErro").html('*O campo E-mail é obrigatório.');
-			return false;
-		}
-		else if(!emailValido($("#email").val())){
-			$("#emailErro").html('*Digite um E-mail válido.');
-			return false;
-		}
-		else if($("#telefone").val() == ''){
-			$("#telefoneErro").html('*O campo Telefone é obrigatório.');
-			return false;
-		}
-		else if(isNaN($("#telefone").val())){
-			$("#telefoneErro").html('*O campo Telefone só permite números.');
-			return false;
-		}
-		else if($("#telefone").val().length < 11){
-			$("#telefoneErro").html('*O campo Telefone não pode ter menos que 11 caracteres.');
-			return false;
-		}
-		else if($("#cep").val() == ''){
-			$("#cepErro").html('*O campo CEP é obrigatório.');
-			return false;
-		}
-		else if(isNaN($("#cep").val())){
-			$("#cepErro").html('*O campo CEP só permite números.');
-			return false;
-		}
-		else if($("#cep").val().length < 8){
-			$("#cepErro").html('*O campo CEP não pode ter menos que 8 caracteres.');
-			return false;
-		}
-		else if($("#cep").val() < 20000000 || $("#cep").val() > 28999999){
-			$("#cepErro").html('*Pedimos perdão, mas não atuamos nesta área ainda.<br>Você será redirecionado para nossa página inicial.');
+		var nome 		= $("#nome").val();
+		var email 		= $("#email").val();
+		var telefone 	= $("#telefone").val();
+		var cep 		= $("#cep").val();
 
-			setTimeout(function () {
-		       window.location.href = "https://grupohrseguranca.com.br";
-		    }, 7000);
-			
+		if(nome == ''){
+			swal("Atenção!", "*O campo NOME é obrigatório.", "warning");
+			return false;
+		}
+		else if(!isNaN(nome)){ 
+			swal("Atenção!", "*O campo NOME não permite número.", "warning");
+			return false;
+		}
+		else if(nome.length < 3){
+			swal("Atenção!", "*O campo NOME não pode ter menos que 3 caracteres.", "warning");
+			return false;
+		}
+		else if(email == ''){
+			swal("Atenção!", "*O campo E-MAIL é obrigatório.", "warning");
+			return false;
+		}
+		else if(!emailValido(email)){
+			swal("Atenção!", "*Digite um E-mail válido.", "warning");
+			return false;
+		}
+		else if(telefone == ''){
+			swal("Atenção!", "*O campo TELEFONE é obrigatório.", "warning");
+			return false;
+		}
+		else if(isNaN(telefone)){
+			swal("Atenção!", "*O campo TELEFONE só permite números.", "warning");
+			return false;
+		}
+		else if(telefone.length < 11){
+			swal("Atenção!", "*O campo TELEFONE não pode ter menos que 11 caracteres.", "warning");
+			return false;
+		}
+		else if(cep == ''){
+			swal("Atenção!", "*O campo CEP é obrigatório.", "warning");
+			return false;
+		}
+		else if(isNaN(cep)){
+			swal("Atenção!", "*O campo CEP só permite números.", "warning");
+			return false;
+		}
+		else if(cep.length < 8){
+			swal("Atenção!", "*O campo CEP não pode ter menos que 8 caracteres.", "warning");
+			return false;
+		}
+		else if(cep < 20000000 || cep > 28999999){
+			swal("Atenção!", "*Pedimos perdão, mas não atuamos nesta área ainda.", "warning");
 			return false;
 		}else{
 			$.ajax({
-				url: 'orcamentor.php',
+				url: 'orcamentoe.php',
 				method: 'post',
-				data: $("#form-data").serialize(),
+				data: {p1:p1, p2:p2, p3:p3, p4:p4, p5:p5, p6:p6, p7:p7, p8:p8, nome:nome, telefone:telefone, email:email, cep:cep, recaptcha:grecaptcha.getResponse()},
 				success: function(data){
-					// $("#resultado").show();
+					$("#resultado").show();
 					$("#resultado").html(data);
 				}
 			});

@@ -87,3 +87,7 @@ a:hover{
 	transform: scale(1);
 	opacity: 1;
 }
+
+@media (max-width:540px){
+	.branco{height: 860px;}
+}

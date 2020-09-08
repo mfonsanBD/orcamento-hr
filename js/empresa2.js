@@ -1,6 +1,7 @@
 $(document).ready(function(){
-	$("input[name=passo1]").click(function(e){
+	var p1, p2, p3, p4, p5, p6;
 
+	$("input[name=passo1]").click(function(e){
 		e.preventDefault();
 		$('#passo1Erro').html('');
 
@@ -13,16 +14,15 @@ $(document).ready(function(){
 			$('#passo1Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p1 = $(this).val();
        		$("#segundo").show();
 			$("#primeiro").hide();
 			$("#progressbar").css("width", "28.4%");
 			$("#preogressText").html("Passo 02 de 07");
-			
 		}
 	});
 
 	$("input[name=passo2]").click(function(e){
-
 		e.preventDefault();
 		$('#passo2Erro').html('');
 
@@ -33,6 +33,7 @@ $(document).ready(function(){
 			$('#passo2Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p2 = $(this).val();
 			$("#terceiro").show();
 			$("#segundo").hide();
 			$("#progressbar").css("width", "42.6%");
@@ -41,7 +42,6 @@ $(document).ready(function(){
 	});
 
 	$("input[name=passo3]").click(function(e){
-
 		e.preventDefault();
 		$('#passo3Erro').html('');
 
@@ -53,6 +53,7 @@ $(document).ready(function(){
 			$('#passo3Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p3 = $(this).val();
 			$("#quarto").show();
 			$("#terceiro").hide();
 			$("#progressbar").css("width", "56.8%");
@@ -61,7 +62,6 @@ $(document).ready(function(){
 	});
 
 	$("input[name=passo4]").click(function(e){
-
 		e.preventDefault();
 		$('#passo4Erro').html('');
 
@@ -75,6 +75,7 @@ $(document).ready(function(){
 			$('#passo4Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p4 = $(this).val();
 			$("#quinto").show();
 			$("#quarto").hide();
 			$("#progressbar").css("width", "71%");
@@ -83,7 +84,6 @@ $(document).ready(function(){
 	});
 
 	$("input[name=passo5]").click(function(e){
-
 		e.preventDefault();
 		$('#passo5Erro').html('');
 
@@ -95,6 +95,7 @@ $(document).ready(function(){
 			$('#passo5Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p5 = $(this).val();
 			$("#sexto").show();
 			$("#quinto").hide();
 			$("#progressbar").css("width", "85.2%");
@@ -103,7 +104,6 @@ $(document).ready(function(){
 	});
 
 	$("input[name=passo6]").click(function(e){
-
 		e.preventDefault();
 		$('#passo6Erro').html('');
 
@@ -114,6 +114,7 @@ $(document).ready(function(){
 			$('#passo6Erro').html('*Selecione uma opção para continuar com o orçamento.');
 			return false;
 		}else{
+			p6 = $(this).val();
 			$("#setimo").show();
 			$("#sexto").hide();
 			$("#progressbar").css("width", "100%");
@@ -128,60 +129,65 @@ $(document).ready(function(){
 		$("#emailErro").html('');
 		$("#cepErro").html('');
 
-		if($("#nome").val() == ''){
-			swal("Erro!", "*O campo NOME é obrigatório.", "error");
+		var nome 		= $("#nome").val();
+		var email 		= $("#email").val();
+		var telefone 	= $("#telefone").val();
+		var cep 		= $("#cep").val();
+
+		if(nome == ''){
+			swal("Atenção!", "*O campo NOME é obrigatório.", "warning");
 			return false;
 		}
-		else if(!isNaN($("#nome").val())){
-			swal("Erro!", "*O campo NOME não permite número.", "error");
+		else if(!isNaN(nome)){ 
+			swal("Atenção!", "*O campo NOME não permite número.", "warning");
 			return false;
 		}
-		else if($("#nome").val().length < 3){
-			swal("Erro!", "*O campo NOME não pode ter menos que 3 caracteres.", "error");
+		else if(nome.length < 3){
+			swal("Atenção!", "*O campo NOME não pode ter menos que 3 caracteres.", "warning");
 			return false;
 		}
-		else if($("#email").val() == ''){
-			swal("Erro!", "*O campo E-MAIL é obrigatório.", "error");
+		else if(email == ''){
+			swal("Atenção!", "*O campo E-MAIL é obrigatório.", "warning");
 			return false;
 		}
-		else if(!emailValido($("#email").val())){
-			swal("Erro!", "*Digite um E-mail válido.", "error");
+		else if(!emailValido(email)){
+			swal("Atenção!", "*Digite um E-mail válido.", "warning");
 			return false;
 		}
-		else if($("#telefone").val() == ''){
-			swal("Erro!", "*O campo TELEFONE é obrigatório.", "error");
+		else if(telefone == ''){
+			swal("Atenção!", "*O campo TELEFONE é obrigatório.", "warning");
 			return false;
 		}
-		else if(isNaN($("#telefone").val())){
-			swal("Erro!", "*O campo TELEFONE só permite números.", "error");
+		else if(isNaN(telefone)){
+			swal("Atenção!", "*O campo TELEFONE só permite números.", "warning");
 			return false;
 		}
-		else if($("#telefone").val().length < 11){
-			swal("Erro!", "*O campo TELEFONE não pode ter menos que 11 caracteres.", "error");
+		else if(telefone.length < 11){
+			swal("Atenção!", "*O campo TELEFONE não pode ter menos que 11 caracteres.", "warning");
 			return false;
 		}
-		else if($("#cep").val() == ''){
-			swal("Erro!", "*O campo CEP é obrigatório.", "error");
+		else if(cep == ''){
+			swal("Atenção!", "*O campo CEP é obrigatório.", "warning");
 			return false;
 		}
-		else if(isNaN($("#cep").val())){
-			swal("Erro!", "*O campo CEP só permite números.", "error");
+		else if(isNaN(cep)){
+			swal("Atenção!", "*O campo CEP só permite números.", "warning");
 			return false;
 		}
-		else if($("#cep").val().length < 8){
-			swal("Erro!", "*O campo CEP não pode ter menos que 8 caracteres.", "error");
+		else if(cep.length < 8){
+			swal("Atenção!", "*O campo CEP não pode ter menos que 8 caracteres.", "warning");
 			return false;
 		}
-		else if($("#cep").val() < 20000000 || $("#cep").val() > 28999999){
-			swal("Erro!", "*Pedimos perdão, mas não atuamos nesta área ainda.", "error");
+		else if(cep < 20000000 || cep > 28999999){
+			swal("Atenção!", "*Pedimos perdão, mas não atuamos nesta área ainda.", "warning");
 			return false;
 		}else{
 			$.ajax({
 				url: 'orcamentoe.php',
 				method: 'post',
-				data: $("#form-data").serialize(),
+				data: {p1:p1, p2:p2, p3:p3, p4:p4, p5:p5, p6:p6, nome:nome, telefone:telefone, email:email, cep:cep, recaptcha:grecaptcha.getResponse()},
 				success: function(data){
-					// $("#resultado").show();
+					$("#resultado").show();
 					$("#resultado").html(data);
 				}
 			});
