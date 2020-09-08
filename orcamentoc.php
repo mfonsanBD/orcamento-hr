@@ -110,27 +110,11 @@ if(isset($_POST['recaptcha']) && !empty($_POST['recaptcha'])){
 		$mail->ClearAllRecipients();
 		// Exibe uma mensagem de resultado do envio (sucesso/erro)
 		if ($enviado) {
-			echo '<script>
-				$(document).ready(function(){
-					swal("Sucesso '.$nome.'...", "Seu pedido de orçamento para condomínio foi enviado. Logo entraremos em contato com você. Obrigado e até breve!", "success"), setTimeout(function () {
-						window.location.href = "https://grupohrbrasil.com.br";
-					}, 5000);
-				});
-			</script>';
+			echo 1;
 		} else {
-			echo "<script>
-			$(document).ready(function(){
-				swal('Olá, ".$nome."...', 'Infelizmente houve um problema ao enviar seu pedido. Tente novamente mais tarde!', 'error');
-			});
-			</script>".$mail->ErrorInfo;
+			echo 0;
 		}
 	}else{
-		echo '
-			<script>
-				$(document).ready(function(){
-					swal("Olá!", "Você precisa marcar o campo de verificação de robô para enviar seu pedido de orçamento.", "error");
-				});
-			</script>
-		';
+		echo 2;
 	}
 }

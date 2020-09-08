@@ -19,7 +19,6 @@ $(document).ready(function(){
 			$("#preogressText").html("Passo 02 de 11");
 		}
 	});
-
 	$("input[name=passo2]").click(function(e){
 		e.preventDefault();
 		$('#passo2Erro').html('');
@@ -38,7 +37,6 @@ $(document).ready(function(){
 			$("#preogressText").html("Passo 03 de 11");
 		}
 	});
-
 	$("input[name=passo3]").click(function(e){
 		e.preventDefault();
 		$('#passo3Erro').html('');
@@ -57,7 +55,6 @@ $(document).ready(function(){
 			$("#preogressText").html("Passo 04 de 11");
 		}
 	});
-
 	$("input[name=passo4]").click(function(e){
 		e.preventDefault();
 		$('#passo4Erro').html('');
@@ -76,7 +73,6 @@ $(document).ready(function(){
 			$("#preogressText").html("Passo 05 de 11");
 		}
 	});
-
 	$("input[name=passo5]").click(function(e){
 		e.preventDefault();
 		$('#passo5Erro').html('');
@@ -95,7 +91,6 @@ $(document).ready(function(){
 			$("#preogressText").html("Passo 06 de 11");
 		}
 	});
-
 	$("input[name=passo6]").click(function(e){
 		e.preventDefault();
 		$('#passo6Erro').html('');
@@ -114,7 +109,6 @@ $(document).ready(function(){
 			$("#preogressText").html("Passo 07 de 11");
 		}
 	});
-
 	$("input[name=passo7]").click(function(e){
 		e.preventDefault();
 		$('#passo7Erro').html('');
@@ -133,7 +127,6 @@ $(document).ready(function(){
 			$("#preogressText").html("Passo 08 de 11");
 		}
 	});
-
 	$("input[name=passo8]").click(function(e){
 		e.preventDefault();
 		$('#passo8Erro').html('');
@@ -152,7 +145,6 @@ $(document).ready(function(){
 			$("#preogressText").html("Passo 09 de 11");
 		}
 	});
-
 	$("input[name=passo9]").click(function(e){
 		e.preventDefault();
 		$('#passo9Erro').html('');
@@ -171,7 +163,6 @@ $(document).ready(function(){
 			$("#preogressText").html("Passo 10 de 11");
 		}
 	});
-
 	$("input[name=passo10]").click(function(e){
 		e.preventDefault();
 		$('#passo10Erro').html('');
@@ -190,7 +181,6 @@ $(document).ready(function(){
 			$("#preogressText").html("Passo 11 de 11");
 		}
 	});
-
 	$("#enviar").click(function(e){
 		e.preventDefault();
 		$("#nomeErro").html('');
@@ -254,7 +244,18 @@ $(document).ready(function(){
 			$.ajax({
 				url: 'orcamentoc.php',
 				method: 'post',
-				data: {p1:p1, p2:p2, p3:p3, p4:p4, p5:p5, p6:p6, p7:p7, p8:p8, p9:p9, p10:p10, nome:nome, telefone:telefone, email:email, cep:cep, recaptcha:grecaptcha.getResponse()}
+				data: {p1:p1, p2:p2, p3:p3, p4:p4, p5:p5, p6:p6, p7:p7, p8:p8, p9:p9, p10:p10, nome:nome, telefone:telefone, email:email, cep:cep, recaptcha:grecaptcha.getResponse()},
+				success: function (dados){
+					if(dados == 1){
+						swal("Sucesso "+nome+"...", "Seu pedido de orçamento para condomínio foi enviado. Logo entraremos em contato com você. Obrigado e até breve!", "success"), setTimeout(function () {
+							window.location.href = "https://grupohrbrasil.com.br";
+						}, 5000);
+					}else if(dados == 2){
+						swal("Olá!", "Você precisa marcar o campo de verificação de robô para enviar seu pedido de orçamento.", "warning");
+					}else{
+						swal("Olá, "+nome+"...", "Infelizmente houve um problema ao enviar seu pedido. Tente novamente mais tarde!", "error");
+					}
+				}
 			});
 		}
 		function emailValido($email){

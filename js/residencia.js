@@ -220,7 +220,18 @@ $(document).ready(function(){
 			$.ajax({
 				url: 'orcamentor.php',
 				method: 'post',
-				data: {p1:p1, p2:p2, p3:p3, p4:p4, p5:p5, p6:p6, p7:p7, p8:p8, nome:nome, telefone:telefone, email:email, cep:cep, recaptcha:grecaptcha.getResponse()}
+				data: {p1:p1, p2:p2, p3:p3, p4:p4, p5:p5, p6:p6, p7:p7, p8:p8, nome:nome, telefone:telefone, email:email, cep:cep, recaptcha:grecaptcha.getResponse()},
+				success: function (dados){
+					if(dados == 1){
+						swal("Sucesso "+nome+"...", "Seu pedido de orçamento para residência foi enviado. Logo entraremos em contato com você. Obrigado e até breve!", "success"), setTimeout(function () {
+							window.location.href = "https://grupohrbrasil.com.br";
+						}, 5000);
+					}else if(dados == 2){
+						swal("Olá!", "Você precisa marcar o campo de verificação de robô para enviar seu pedido de orçamento.", "warning");
+					}else{
+						swal("Olá, "+nome+"...", "Infelizmente houve um problema ao enviar seu pedido. Tente novamente mais tarde!", "error");
+					}
+				}
 			});
 		}
 		function emailValido($email){
